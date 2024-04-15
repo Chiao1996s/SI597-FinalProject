@@ -1,4 +1,274 @@
-/* temporary style to confirm CSS loads. */
-h1 {
-  color: blue;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root{
+  --primary-color:#010105;
+  --secondary-color:#b60000;
+
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: 'Poppins', 'sans-serif';
+  margin: 0;
+}
+
+
+header{
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondary-color);
+  align-items: center;
+  position: sticky;
+  top: 0; 
+  z-index: 1020;
+  box-shadow: #010105;
+
+}
+
+.form-select{
+  max-width: 250pt;
+  background-color: rgb(255, 255, 255);
+  border:2px solid white;
+  border-radius: 50px;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  font-family: inherit;
+}
+
+
+h1{
+  color: white;
+  font-size: bold;
+
+}
+
+h3{
+  font-size: 14pt;
+}
+
+.search{
+  min-width: 250pt;
+  background-color: transparent;
+  border:2px solid var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  color: white;
+  font-family: inherit;
+}
+
+.search:focus{
+  outline:0;
+  background-color: var(--primary-color);
+}
+
+.search::placeholder{
+  color: #dfdfdf;
+}
+
+main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+#mainContent {
+  flex-grow: 1;
+}
+
+#myMoviesContainer {
+  width: 450px; 
+  border-left: 1px solid #ccc;
+  padding-left: 20px;
+}
+
+.movie{
+  width: 300px;
+  margin: 1rem;
+  border-radius: 3px;
+  box-shadow: 0.2px 4px 5px rgba(229, 229, 229, 0);
+  background-color: var(--secondary-color);
+  position: relative;
+  overflow: hidden;
+  min-height: 100pt;
+}
+
+.movie img{
+  width: 100%;
+
+}
+
+.movie-info{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
+}
+
+.movie-info h3{
+  margin-top: 0;
+}
+
+.movie-info span{
+  background-color: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.movie-info span.green{
+  color: lightgreen;
+}
+
+.movie-info span.orange{
+  color: orange;
+}
+
+.movie-info span.red{
+  color: red;
+}
+
+.overview{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  padding: 1rem;
+  max-height: 100%;
+  transform: translateY(101%);
+  transition:transform 0.3s ease-in;
+}
+
+.movie:hover .overview{
+  transform: translateY(0);
+}
+
+
+#myMoviesDropdown {
+  margin-top: 10px;
+}
+
+.btn-add {
+  position: absolute;
+  top: 10px; 
+  right: 10px;  
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;  
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-add:hover {
+  color: white;
+  background-color: red;
+}
+
+.btn-add:active {
+  transform: scale(1.1);
+  transition: transform 0.1s;
+}
+
+.remove-btn {
+  padding: 2px 6px;
+  font-size: 12px;
+  color: white;
+  background-color: red;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.remove-btn:hover {
+  background-color: darkred;
+}
+
+.remove-btn:focus {
+  outline: none;
+}
+
+.my-movies-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  height: auto;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.my-movies-list li {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 8px;
+  background-color: #f8f9fa; 
+  border-bottom: 1px solid #dee2e6; 
+}
+
+.dropdown-container {
+  position: sticky;
+  top: 100px; 
+  z-index: 1010; 
+  background-color: #fff; 
+  padding: 15px; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  line-height: 20pt;
+
+}
+
+.title-container>label{
+  font-size: 24pt;
+}
+
+.remove-btn {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.remove-btn:hover {
+  background-color: #c82333;
+}
+
+.placeholder{
+  background-color: transparent;
+  color: #010105;
+}
+
+.btn-primary{
+  background-color: #010105 ;
+  color: white;
+  margin-left: auto;
+}
+
+.btn-primary:hover {
+  background-color: grey;
+}
+
+.btn-primary:focus {
+  outline: none;
+}
+
+
+.title-container {
+  display: flex;
+  justify-content: space-between; /* This spreads out the label and button */
+  align-items: center; /* Aligns items vertically in the center */
+  padding: 0 15px; /* Add padding as needed for spacing */
 }
